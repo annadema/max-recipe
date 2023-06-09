@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { RecipesService } from './recipes.service';
 
 @Component({
   selector: 'app-recipes',
@@ -7,27 +8,10 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipes.page.scss'],
 })
 export class RecipesPage implements OnInit {
-  recipes: Recipe[] = [
-    {
-      id: 'r1',
-      title: 'Bucconotti',
-      imageUrl:
-        'https://blog.giallozafferano.it/melacannellaefantasia/wp-content/uploads/2019/10/bocconotti-abruzzesi.jpg',
-      ingredients: ['6 uova', '300 g farina', '150 g zucchero'],
-    },
-    {
-      id: 'r2',
-      title: 'Grispelle',
-      imageUrl:
-        'https://www.mangiarebuono.it/wp-content/uploads/2015/12/grispelle-calabresi.jpg',
-      ingredients: [
-        '500 g patate',
-        '500 g farina',
-        '1 cubetto lievito di birra',
-      ],
-    },
-  ];
-  constructor() {}
+  recipes: Recipe[];
+  constructor(private recipeService: RecipesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.recipes = this.recipeService.getAllRecipes();
+  }
 }
