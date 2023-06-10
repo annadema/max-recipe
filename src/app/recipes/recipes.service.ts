@@ -15,13 +15,20 @@ export class RecipesService {
     },
     {
       id: 'r2',
-      title: 'Grispelle',
+      title: 'Torta Mimosa',
       imageUrl:
-        'https://www.mangiarebuono.it/wp-content/uploads/2015/12/grispelle-calabresi.jpg',
+        'https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Torta-mimosa-5008.jpg',
+      ingredients: ['5 uova (medie)', '135 g zucchero', '80 g farina 00'],
+    },
+    {
+      id: 'r3',
+      title: 'Torta al cioccolato',
+      imageUrl:
+        'https://www.giallozafferano.it/images/243-24376/Torta-al-cioccolato_450x300.jpg',
       ingredients: [
-        '500 g patate',
-        '500 g farina',
-        '1 cubetto lievito di birra',
+        'Cioccolato fondente al 55% 150 g',
+        'Zucchero 150 g',
+        'Farina 00 150 g',
       ],
     },
   ];
@@ -31,7 +38,7 @@ export class RecipesService {
     return [...this.recipes];
   }
 
-  getRecipe(recipeId: string) {
+  getRecipe(recipeId: string | null) {
     return {
       ...this.recipes.find((recipe) => {
         return recipe.id === recipeId;

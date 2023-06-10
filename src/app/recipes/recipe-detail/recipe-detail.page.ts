@@ -21,7 +21,7 @@ export class RecipeDetailPage implements OnInit {
         //redirect
         return;
       }
-      const recipeId = paramMap.get('recipeId')!;
+      const recipeId: string | null = paramMap.get('recipeId')!;
       this.loadedRecipe = this.recipeService.getRecipe(recipeId)!;
     });
   }

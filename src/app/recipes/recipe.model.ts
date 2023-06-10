@@ -4,4 +4,4 @@ export class Recipe {
   imageUrl: string;
   ingredients: string[];
 }
-const recipe: Recipe = new Recipe();
+//const recipe: Recipe = new Recipe();
